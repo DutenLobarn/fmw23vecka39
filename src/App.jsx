@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import "./App.css";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
 import ReactGa from "react-ga4";
+
+import ProductList from "./components/ProductList";
+import ProductPage from "./components/ProductPage";
 
 const TRACKING_ID = "G-9SVXN53H8H";
 
@@ -21,8 +22,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/" element={<ProductList />} />
+      <Route path="/product/:id" element={<ProductPage />} />
     </Routes>
   );
 }
